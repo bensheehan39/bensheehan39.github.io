@@ -16,7 +16,7 @@ loadBtn.addEventListener("click", async () => {
     if (!year) return alert("Enter a season year");
     if (year < 2018 || year > 2025) return alert("Only years between 2018 and 2025 are supported.");
 
-    const response = await fetch(`http://127.0.0.1:5000/get_races?year=${year}`);
+    const response = await fetch(`https://backend-ego7.onrender.com/get_races?year=${year}`);
     const races = await response.json();
 
     raceDropdown.innerHTML = '<option value="">Select a race</option>';
@@ -39,7 +39,7 @@ plotBtn.addEventListener("click", () => {
         alert("Please select both a season year and a race.");
         return;
     }
-    img.src = `http://127.0.0.1:5000/plot_lap_times?year=${year}&round=${round}&t=` + new Date().getTime();
+    img.src = `https://backend-ego7.onrender.com/plot_lap_times?year=${year}&round=${round}&t=` + new Date().getTime();
 });
 
 
@@ -55,7 +55,7 @@ plotBtn.addEventListener("click", async () => {
         return;
     }
 
-    const response = await fetch(`http://127.0.0.1:5000/plot_lap_times?year=${year}&round=${round}&t=` + new Date().getTime());
+    const response = await fetch(`https://backend-ego7.onrender.com/plot_lap_times?year=${year}&round=${round}&t=` + new Date().getTime());
     const data = await response.json();
 
     const firstPlotB64 = data.images[0];
@@ -65,3 +65,4 @@ plotBtn.addEventListener("click", async () => {
     const thirdPlotB64 = data.images[2];
     img3.src = "data:image/png;base64," + thirdPlotB64;
 });
+
