@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Projects</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="assets/project-scripts.js"></script>
+</head>
+<body>
+    <!--Navbar-->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ben Sheehan</div>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="cv/Ben_Sheehan_Resume.pdf" target="_blank">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <section class="projects-section">
+        <h2>Projects</h2>
+        
+        <!--Dropdown Menu-->
+        <label for="project-select">Choose a project:</label>
+        <select id="project-select">
+            <option value="project1">Research Paper</option>
+            <option value="project2">F1 Analysis</option>
+        </select>
+
+
+        <div id="project-display" class="project-display">
+            
+
+            <!--Project 1-->
+            <div id="project1" class="project-content">
+                <h3>Project</h3>
+                <p>Describe to non technical people</p>
+                <iframe src="cv/Ben_Paper.pdf" width="100%" height="600px">
+                    This browser does not support PDFs. Please download the PDF to view it: 
+                    <a href="cv/Ben_Paper.pdf">Download PDF</a>.
+                </iframe>
+            </div>
+
+
+
+            <!--Project 2-->
+            <div id="project2" class="project-content" style="display: none;">
+                <h3>F1 Lap Time Analysis</h3>
+                <p>Pick a race and see the lap time analysis.</p>
+
+                <input type="number" id="season-input" placeholder="Enter season year">
+                <button id="load-races-btn">Load Races</button>
+                <select id="race-drop-down">
+                    <option value="">Select a race</option>
+                </select>
+
+
+                <button id="plot-btn">Generate Plot</button>
+
+                <div class="plot-container">
+                    <img id="plot-image-qualifying" src="" alt="Plot will appear here">
+                    <img id="plot-image-race-positions" src="" alt="Plot will appear here">
+                    <img id="plot-image-race-pace" src="" alt="Plot will appear here">
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</body>
+</html>
